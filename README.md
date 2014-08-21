@@ -126,7 +126,7 @@ in machine learning projects.
 The following files are contained in the submission:
 
 File Name        | Description
-- | -
+---------------- | --------------------------------------------
 README.md        | This file.
 README.Rmd       | The Rmd source of this file.
 README.html      | The HTML version of this fie.
@@ -145,7 +145,7 @@ a single directory---*UCI HAR Dataset*---with the following files and sub-direct
 
 
 File Name           | Description
-- | -
+------------------- | ----------------------------------
 activity_labels.txt | Maps activity codes to descriptive names.
 features.txt        | Maps the 561 feature numbers (columns) to names.
 features_info.txt   | Descripiton of the features.
@@ -156,7 +156,7 @@ test/               | The subdirectory of test data
 The two subdirectories contain the following files and directories:
 
 File Name               | Description | Size (***sd***=train) | Size (***sd***=test)
-- | - | - | - |
+----------------------- | ----------- | --------------------- | --------------------
 X_***sd***.txt          | The collected data. | 7352x561 | 2947x561
 y_***sd***.txt          | The data labels. | 7352x1 | 2947x1
 subject_***sd***.txt    | The subject number for each observation. | 7352x1 | 2947x1
