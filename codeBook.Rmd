@@ -34,9 +34,9 @@ for subject **#`r averages[1,2]`**.
 The first two columns are
 
 Column | Variable | Description
-- | - | -
-1        | Activity      | The desciptive name of the activity being performed.
-2        | Subject       | THe number of the subject performing the activity.
+------ | -------- | ----------------
+1      | Activity | The desciptive name of the activity being performed.
+2      | Subject  | THe number of the subject performing the activity.
 
 The subsequent columns are
 
