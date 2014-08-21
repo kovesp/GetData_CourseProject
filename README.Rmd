@@ -1,5 +1,21 @@
+---
+output:
+  html_document:
+    keep_md: yes
+    number_sections: yes
+    theme: cerulean
+    toc: yes
+---
 
+```{r CountFeatures,echo=FALSE,results='hide'}
+source("run_analysis.R")
+numFeatures  <- length(readLines(unz("dataset.zip","UCI HAR Dataset/features.txt")))
+numTestRows  <- length(readLines(unz("dataset.zip","UCI HAR Dataset/test/subject_test.txt")))
+numTrainRows <- length(readLines(unz("dataset.zip","UCI HAR Dataset/train/subject_train.txt")))
+pctTrain     <- round(numTrainRows / (numTrainRows+numTestRows) * 100)
+pctTest      <- round(numTestRows  / (numTrainRows+numTestRows) * 100)
 
+```
 
 # Introduction
 This project is a demonstration of obtaining raw (or in this case near-raw) data
@@ -24,13 +40,10 @@ The data set contains accelerometer and gyroscope sensor readings collected from
 30 experiment participants. The participants were measured on the following types
 of activities: 
 
-              Activity
-1 Walking             
-2 WalkingUpstairs     
-3 WalkingDownstairs   
-4 Sitting             
-5 Standing            
-6 Laying              
+```{r,echo=FALSE, results='asis'}
+a<-sapply(suppressWarnings(getActivities()),function (x) sprintf("%-20s",x))
+data.frame(Activity=a,stringsAsFactors=F,row.names=seq_along(a))
+```
 
 The following simplified description is derived from the description of features
 provided with the data (cf., *features_info.txt*):
@@ -72,7 +85,7 @@ and **standard deviation**---these are the only ones we are going to consider
 in this project.
 
 The original researchers separated the data into training and test sets with a
-71%/29% breakdown. Making this breakdown is standard procedure
+`r pctTrain`%/`r pctTest`% breakdown. Making this breakdown is standard procedure
 in machine learning projects.
 
 # Project Goals
@@ -147,7 +160,7 @@ a single directory---*UCI HAR Dataset*---with the following files and sub-direct
 File Name           | Description
 - | -
 activity_labels.txt | Maps activity codes to descriptive names.
-features.txt        | Maps the 561 feature numbers (columns) to names.
+features.txt        | Maps the `r numFeatures` feature numbers (columns) to names.
 features_info.txt   | Descripiton of the features.
 README.txt          | Overall description of the dataset
 train/              | The subdirectory of training data 
@@ -157,7 +170,7 @@ The two subdirectories contain the following files and directories:
 
 File Name               | Description | Size (***sd***=train) | Size (***sd***=test)
 - | - | - | - |
-X_***sd***.txt          | The collected data. | 7352x561 | 2947x561
-y_***sd***.txt          | The data labels. | 7352x1 | 2947x1
-subject_***sd***.txt    | The subject number for each observation. | 7352x1 | 2947x1
+X_***sd***.txt          | The collected data. | `r numTrainRows`x`r numFeatures` | `r numTestRows`x`r numFeatures`
+y_***sd***.txt          | The data labels. | `r numTrainRows`x1 | `r numTestRows`x1
+subject_***sd***.txt    | The subject number for each observation. | `r numTrainRows`x1 | `r numTestRows`x1
 Inertial Signals/       | A subdirectory of raw data which we ignore. |                 |

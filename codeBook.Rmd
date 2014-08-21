@@ -1,0 +1,48 @@
+---
+output:
+  html_document:
+    keep_md: yes
+    theme: cerulean
+---
+```{r CountFeatures,echo=FALSE,results='hide'}
+source("run_analysis.R")
+averages<-read.table("averages.txt")
+```
+
+Code Book
+=========
+
+This code book lists all variables (columns) of the results of the analysis 
+described in the README.md file. For a detailed description the reader is
+refered to the README.txt and features_info.txt files of the orginal researchers
+(these are included in the submission).
+
+The data set is located in the *averages.txt* file which contains
+`r nrow(averages)` rows of `r ncol(averages)` columns. the columns correspond
+to variables while the rows are observations. The data in the table are the averages
+of the oroginal retained variables by the activity type and subject.
+
+The first 12 rows and first five columns look like this:
+
+```{r,echo=FALSE,results='asis'}
+knitr::kable(averages[1:12,1:5])
+```
+
+So for example, in this extract the value **`r averages[1,3]`** is the average of the variable **`r colnames(averages)[3]`** for the activity **`r averages[1,1]`**
+for subject **#`r averages[1,2]`**.
+
+The first two columns are
+
+Column | Variable | Description
+- | - | -
+1        | Activity      | The desciptive name of the activity being performed.
+2        | Subject       | THe number of the subject performing the activity.
+
+The subsequent columns are
+
+```{r,echo=FALSE,results='asis'}
+cols<-3:ncol(averages)
+knitr::kable(data.frame(Column=cols,Variable=colnames(averages)[cols]),align=c('l','l'))
+```
+
+
