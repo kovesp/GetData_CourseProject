@@ -89,7 +89,7 @@ run <- function() {
 
    # Finally, save the result to a file.
    msg("Writting result file to %s",averagesFN)
-   write.table(averages,file=averagesFN)
+   write.table(averages,file=averagesFN,row.name=FALSE)
 }
 
 ################################################################################
