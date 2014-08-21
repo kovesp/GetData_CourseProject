@@ -4,16 +4,17 @@ Code Book
 =========
 
 This code book lists all variables (columns) of the results of the analysis 
-described in the README.md file. For a detailed description the reader is
-refered to the README.txt and features_info.txt files of the orginal researchers
+described in the *README.md* file. For a detailed description the reader is
+referred to the *README.txt* and *features_info.txt* files of the original researchers
 (these are included in the submission).
 
-The data set is located in the *averages.txt* file which contains
-180 rows of 68 columns. the columns correspond
-to variables while the rows are observations. The data in the table are the averages
-of the oroginal retained variables by the activity type and subject.
+The data set is located in the *averages.txt* file which contains 
+**180** rows of **68** columns.
+Note: **180** = **30** activities X **6** subjects.
 
-The first 12 rows and first five columns look like this:
+The columns correspond to variables while the rows are observations. The data in the table are the averages of the original retained variables by the activity type and subject.
+
+The first 12 rows and first 5 columns look like this:
 
 
 |Activity          | Subject| tBodyAcc.mean.X| tBodyAcc.mean.Y| tBodyAcc.mean.Z|
@@ -38,8 +39,8 @@ The first two columns are
 
 Column | Variable | Description
 ------ | -------- | ----------------
-1      | Activity | The desciptive name of the activity being performed.
-2      | Subject  | THe number of the subject performing the activity.
+1      | Activity | The descriptive name of the activity being performed.
+2      | Subject  | The number of the subject performing the activity.
 
 The subsequent columns are
 
@@ -112,5 +113,48 @@ The subsequent columns are
 |66     |fBodyBodyGyroMag.std      |
 |67     |fBodyBodyGyroJerkMag.mean |
 |68     |fBodyBodyGyroJerkMag.std  |
+
+The above table is an exhaustive list of all columns. The following two tables
+give a more compact list of the **26** variables for
+which data is given in the file.
+
+The following 17 variables have 6 variants
+(...*stat*.*coord*, *stat*=mean | std, *coord* = X | Y | Z):
+
+
+|N  |Variable             |
+|:--|:--------------------|
+|1  |tBodyAcc             |
+|2  |tGravityAcc          |
+|3  |tBodyAccJerk         |
+|4  |tBodyGyro            |
+|5  |tBodyGyroJerk        |
+|6  |tBodyAccMag          |
+|7  |tGravityAccMag       |
+|8  |tBodyAccJerkMag      |
+|9  |tBodyGyroMag         |
+|10 |tBodyGyroJerkMag     |
+|11 |fBodyAcc             |
+|12 |fBodyAccJerk         |
+|13 |fBodyGyro            |
+|14 |fBodyAccMag          |
+|15 |fBodyBodyAccJerkMag  |
+|16 |fBodyBodyGyroMag     |
+|17 |fBodyBodyGyroJerkMag |
+
+The following 9 variables have 2 variants (...*stat*, *stat*=mean | std):
+
+
+|N  |Variable             |
+|:--|:--------------------|
+|18 |tBodyAccMag          |
+|19 |tGravityAccMag       |
+|20 |tBodyAccJerkMag      |
+|21 |tBodyGyroMag         |
+|22 |tBodyGyroJerkMag     |
+|23 |fBodyAccMag          |
+|24 |fBodyBodyAccJerkMag  |
+|25 |fBodyBodyGyroMag     |
+|26 |fBodyBodyGyroJerkMag |
 
 

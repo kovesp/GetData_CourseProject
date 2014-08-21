@@ -69,7 +69,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
-<p>This project is a demonstration of obtaining raw (or in this case near-raw) data and trasfroming it into a more readily usable form. The data itself relates to wearable computing. To quote from the problem statement:</p>
+<p>This project is a demonstration of obtaining raw (or in this case near-raw) data and transforming it into a more readily usable form. The data itself relates to wearable computing. To quote from the problem statement:</p>
 <blockquote>
 <p>One of the most exciting areas in all of data science right now is wearable computing — see for example <a href="http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/">this article</a>. Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:</p>
 </blockquote>
@@ -80,7 +80,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </blockquote>
 <div id="data-characterization" class="section level2">
 <h2><span class="header-section-number">1.1</span> Data Characterization</h2>
-<p>The data set contains accelerometer and gyroscope sensor readings collected from 30 experiment participants. The participants were measured on the following types of activities:</p>
+<p>The data set contains accelerometers and gyroscope sensor readings collected from 30 experiment participants. The participants were measured on the following types of activities:</p>
 <pre><code>          Activity</code></pre>
 <p>1 Walking<br />2 WalkingUpstairs<br />3 WalkingDownstairs<br />4 Sitting<br />5 Standing<br />6 Laying</p>
 <p>The following simplified description is derived from the description of features provided with the data (cf., <em>features_info.txt</em>):</p>
@@ -116,8 +116,8 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li>Combine the training and test sets into a single set.</li>
 <li>Extract the means and standard deviations.</li>
 <li>Add descriptive activity names</li>
-<li>Label the dataset with descriptive variable names</li>
-<li>Create a new dataset with the average of each variable for each activity and each subject.</li>
+<li>Label the data-set with descriptive variable names</li>
+<li>Create a new data-set with the average of each variable for each activity and each subject.</li>
 </ol>
 </div>
 <div id="solution-flow" class="section level1">
@@ -137,9 +137,9 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li>The subject numbers corresponding to each row of the data are loaded from <em>train/subject_train.txt</em> and <em>test/subject_test.txt</em> as vectors.</li>
 <li><p>The main data is loaded as data.frames from <em>train/X_train.txt</em> and <em>test/X_test.txt</em>. During the load the feature names</p></li>
 <li>The two data frames are combined into a single data.frame containing both training and test data set.</li>
-<li>Using the intersting names computed in step 3, the data is reduced by keeping only these columns and discarding the rest.</li>
+<li>Using the interesting names computed in step 3, the data is reduced by keeping only these columns and discarding the rest.</li>
 <li>The activity names (utilizing the results of steps 2 and 4) and the subject numbers (utilizing the results of step 5) are prepended to the data set as two new columns.</li>
-<li>Now the final desired data set of all interesting variables averaged by activity and subject can be computed by aggrgating over the first two columns.</li>
+<li>Now the final desired data set of all interesting variables averaged by activity and subject can be computed by aggregating over the first two columns.</li>
 <li><p>Finally the result is written to the file <em>averages.txt</em> in a form that can be loaded by <strong>read.table</strong>. The column names are included in the file.</p></li>
 </ol>
 </div>
@@ -165,27 +165,11 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <tbody>
 <tr class="odd">
 <td align="left">README.md</td>
-<td align="left">This file.</td>
-</tr>
-<tr class="even">
-<td align="left">README.Rmd</td>
-<td align="left">The Rmd source of this file.</td>
-</tr>
-<tr class="odd">
-<td align="left">README.html</td>
-<td align="left">The HTML version of this fie.</td>
+<td align="left">This file (as well as the .Rmd source and .html output).</td>
 </tr>
 <tr class="even">
 <td align="left">codeBook.md</td>
-<td align="left">The code book describing the tidy data.</td>
-</tr>
-<tr class="odd">
-<td align="left">codeBook.Rmd</td>
-<td align="left">The Rmd sourse of the code book.</td>
-</tr>
-<tr class="even">
-<td align="left">codeBook.html</td>
-<td align="left">The HTML version of the code book.</td>
+<td align="left">The code book describing the tidy data (as well as the .Rmd source and .html output).</td>
 </tr>
 <tr class="odd">
 <td align="left">README.txt</td>
@@ -193,7 +177,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </tr>
 <tr class="even">
 <td align="left">features_info.txt</td>
-<td align="left">The original feature descripitons extracted from the data set zip file.</td>
+<td align="left">The original feature descriptions extracted from the data set zip file.</td>
 </tr>
 <tr class="odd">
 <td align="left">run_analysis.R</td>
@@ -201,7 +185,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </tr>
 <tr class="even">
 <td align="left">averages.txt</td>
-<td align="left">Result dataset of intersting variables averaged by activity and subject.</td>
+<td align="left">Result data-set of interesting variables averaged by activity and subject.</td>
 </tr>
 </tbody>
 </table>
@@ -227,23 +211,23 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </tr>
 <tr class="odd">
 <td align="left">features_info.txt</td>
-<td align="left">Descripiton of the features.</td>
+<td align="left">Description of the features.</td>
 </tr>
 <tr class="even">
 <td align="left">README.txt</td>
-<td align="left">Overall description of the dataset</td>
+<td align="left">Overall description of the data-set</td>
 </tr>
 <tr class="odd">
 <td align="left">train/</td>
-<td align="left">The subdirectory of training data</td>
+<td align="left">The sub-directory of training data</td>
 </tr>
 <tr class="even">
 <td align="left">test/</td>
-<td align="left">The subdirectory of test data</td>
+<td align="left">The sub-directory of test data</td>
 </tr>
 </tbody>
 </table>
-<p>The two subdirectories contain the following files and directories:</p>
+<p>The two sub-directories contain the following files and directories:</p>
 <table>
 <thead>
 <tr class="header">
@@ -274,7 +258,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </tr>
 <tr class="even">
 <td align="left">Inertial Signals/</td>
-<td align="left">A subdirectory of raw data which we ignore.</td>
+<td align="left">A sub-directory of raw data which we ignore.</td>
 <td align="left"></td>
 </tr>
 </tbody>

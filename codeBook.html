@@ -55,9 +55,10 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <div id="code-book" class="section level1">
 <h1>Code Book</h1>
-<p>This code book lists all variables (columns) of the results of the analysis described in the README.md file. For a detailed description the reader is refered to the README.txt and features_info.txt files of the orginal researchers (these are included in the submission).</p>
-<p>The data set is located in the <em>averages.txt</em> file which contains 180 rows of 68 columns. the columns correspond to variables while the rows are observations. The data in the table are the averages of the oroginal retained variables by the activity type and subject.</p>
-<p>The first 12 rows and first five columns look like this:</p>
+<p>This code book lists all variables (columns) of the results of the analysis described in the <em>README.md</em> file. For a detailed description the reader is referred to the <em>README.txt</em> and <em>features_info.txt</em> files of the original researchers (these are included in the submission).</p>
+<p>The data set is located in the <em>averages.txt</em> file which contains <strong>180</strong> rows of <strong>68</strong> columns. Note: <strong>180</strong> = <strong>30</strong> activities X <strong>6</strong> subjects.</p>
+<p>The columns correspond to variables while the rows are observations. The data in the table are the averages of the original retained variables by the activity type and subject.</p>
+<p>The first 12 rows and first 5 columns look like this:</p>
 <table>
 <thead>
 <tr class="header">
@@ -169,12 +170,12 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <tr class="odd">
 <td align="left">1</td>
 <td align="left">Activity</td>
-<td align="left">The desciptive name of the activity being performed.</td>
+<td align="left">The descriptive name of the activity being performed.</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
 <td align="left">Subject</td>
-<td align="left">THe number of the subject performing the activity.</td>
+<td align="left">The number of the subject performing the activity.</td>
 </tr>
 </tbody>
 </table>
@@ -450,6 +451,133 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <tr class="even">
 <td align="left">68</td>
 <td align="left">fBodyBodyGyroJerkMag.std</td>
+</tr>
+</tbody>
+</table>
+<p>The above table is an exhaustive list of all columns. The following two tables give a more compact list of the <strong>26</strong> variables for which data is given in the file.</p>
+<p>The following 17 variables have 6 variants (…<em>stat</em>.<em>coord</em>, <em>stat</em>=mean | std, <em>coord</em> = X | Y | Z):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">N</th>
+<th align="left">Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">tBodyAcc</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">tGravityAcc</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">tBodyAccJerk</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">tBodyGyro</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">tBodyGyroJerk</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">tBodyAccMag</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left">tGravityAccMag</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="left">tBodyAccJerkMag</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left">tBodyGyroMag</td>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="left">tBodyGyroJerkMag</td>
+</tr>
+<tr class="odd">
+<td align="left">11</td>
+<td align="left">fBodyAcc</td>
+</tr>
+<tr class="even">
+<td align="left">12</td>
+<td align="left">fBodyAccJerk</td>
+</tr>
+<tr class="odd">
+<td align="left">13</td>
+<td align="left">fBodyGyro</td>
+</tr>
+<tr class="even">
+<td align="left">14</td>
+<td align="left">fBodyAccMag</td>
+</tr>
+<tr class="odd">
+<td align="left">15</td>
+<td align="left">fBodyBodyAccJerkMag</td>
+</tr>
+<tr class="even">
+<td align="left">16</td>
+<td align="left">fBodyBodyGyroMag</td>
+</tr>
+<tr class="odd">
+<td align="left">17</td>
+<td align="left">fBodyBodyGyroJerkMag</td>
+</tr>
+</tbody>
+</table>
+<p>The following 9 variables have 2 variants (…<em>stat</em>, <em>stat</em>=mean | std):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">N</th>
+<th align="left">Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">18</td>
+<td align="left">tBodyAccMag</td>
+</tr>
+<tr class="even">
+<td align="left">19</td>
+<td align="left">tGravityAccMag</td>
+</tr>
+<tr class="odd">
+<td align="left">20</td>
+<td align="left">tBodyAccJerkMag</td>
+</tr>
+<tr class="even">
+<td align="left">21</td>
+<td align="left">tBodyGyroMag</td>
+</tr>
+<tr class="odd">
+<td align="left">22</td>
+<td align="left">tBodyGyroJerkMag</td>
+</tr>
+<tr class="even">
+<td align="left">23</td>
+<td align="left">fBodyAccMag</td>
+</tr>
+<tr class="odd">
+<td align="left">24</td>
+<td align="left">fBodyBodyAccJerkMag</td>
+</tr>
+<tr class="even">
+<td align="left">25</td>
+<td align="left">fBodyBodyGyroMag</td>
+</tr>
+<tr class="odd">
+<td align="left">26</td>
+<td align="left">fBodyBodyGyroJerkMag</td>
 </tr>
 </tbody>
 </table>

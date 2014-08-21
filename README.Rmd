@@ -19,7 +19,7 @@ pctTest      <- round(numTestRows  / (numTrainRows+numTestRows) * 100)
 
 # Introduction
 This project is a demonstration of obtaining raw (or in this case near-raw) data
-and trasfroming it into a more readily usable form. The data itself relates to
+and transforming it into a more readily usable form. The data itself relates to
 wearable computing. To quote from the problem statement:
 
 >One of the most exciting areas in all of data science right now is wearable
@@ -36,7 +36,7 @@ wearable computing. To quote from the problem statement:
 
 
 ## Data Characterization
-The data set contains accelerometer and gyroscope sensor readings collected from
+The data set contains accelerometers and gyroscope sensor readings collected from
 30 experiment participants. The participants were measured on the following types
 of activities: 
 
@@ -93,8 +93,8 @@ in machine learning projects.
 1. Combine the training and test sets into a single set.
 2. Extract the means and standard deviations.
 3. Add descriptive activity names
-4. Label the dataset with descriptive variable names
-5. Create a new dataset with the average of each variable for each activity and
+4. Label the data-set with descriptive variable names
+5. Create a new data-set with the average of each variable for each activity and
    each subject.
    
 # Solution Flow
@@ -117,13 +117,13 @@ in machine learning projects.
    
 7. The two data frames are combined into a single data.frame containing both
    training and test data set.
-8. Using the intersting names computed in step 3, the data is reduced by
+8. Using the interesting names computed in step 3, the data is reduced by
    keeping only these columns and discarding the rest.
 9. The activity names (utilizing the results of steps 2 and 4) and the subject
    numbers (utilizing the results of step 5) are prepended to the data set
    as two new columns.
 10. Now the final desired data set of all interesting variables averaged by
-    activity and subject can be computed by aggrgating over the first two
+    activity and subject can be computed by aggregating over the first two
     columns.
 11. Finally the result is written to the file *averages.txt* in a form that
     can be loaded by **read.table**. The column names are included in the file.
@@ -140,16 +140,12 @@ The following files are contained in the submission:
 
 File Name        | Description
 ---------------- | --------------------------------------------
-README.md        | This file.
-README.Rmd       | The Rmd source of this file.
-README.html      | The HTML version of this fie.
-codeBook.md      | The code book describing the tidy data.
-codeBook.Rmd     | The Rmd sourse of the code book.
-codeBook.html    | The HTML version of the code book.
+README.md        | This file (as well as the .Rmd source and .html output).
+codeBook.md      | The code book describing the tidy data (as well as the .Rmd source and .html output).
 README.txt       | The original README extracted from the data set zip file.
-features_info.txt| The original feature descripitons extracted from the data set zip file.
+features_info.txt| The original feature descriptions extracted from the data set zip file.
 run_analysis.R   | Main script to to load the data, clean it and produce the output.
-averages.txt     | Result dataset of intersting variables averaged by activity and subject.
+averages.txt     | Result data-set of interesting variables averaged by activity and subject.
 
 ## Input Data Set Structure
 
@@ -161,16 +157,16 @@ File Name           | Description
 ------------------- | ----------------------------------
 activity_labels.txt | Maps activity codes to descriptive names.
 features.txt        | Maps the `r numFeatures` feature numbers (columns) to names.
-features_info.txt   | Descripiton of the features.
-README.txt          | Overall description of the dataset
-train/              | The subdirectory of training data 
-test/               | The subdirectory of test data
+features_info.txt   | Description of the features.
+README.txt          | Overall description of the data-set
+train/              | The sub-directory of training data 
+test/               | The sub-directory of test data
 
-The two subdirectories contain the following files and directories:
+The two sub-directories contain the following files and directories:
 
 File Name               | Description | Size (***sd***=train) | Size (***sd***=test)
 ----------------------- | ----------- | --------------------- | --------------------
 X_***sd***.txt          | The collected data. | `r numTrainRows`x`r numFeatures` | `r numTestRows`x`r numFeatures`
 y_***sd***.txt          | The data labels. | `r numTrainRows`x1 | `r numTestRows`x1
 subject_***sd***.txt    | The subject number for each observation. | `r numTrainRows`x1 | `r numTestRows`x1
-Inertial Signals/       | A subdirectory of raw data which we ignore. |                 |
+Inertial Signals/       | A sub-directory of raw data which we ignore. |                 |

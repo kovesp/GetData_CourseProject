@@ -6,23 +6,26 @@ output:
 ---
 ```{r CountFeatures,echo=FALSE,results='hide'}
 source("run_analysis.R")
-averages<-read.table("averages.txt")
+averages    <- read.table("averages.txt",header=T)
+nActivities <- length(levels(averages$Activity))
+nSubjects   <- length(unique(averages$Subject))
 ```
 
 Code Book
 =========
 
 This code book lists all variables (columns) of the results of the analysis 
-described in the README.md file. For a detailed description the reader is
-refered to the README.txt and features_info.txt files of the orginal researchers
+described in the *README.md* file. For a detailed description the reader is
+referred to the *README.txt* and *features_info.txt* files of the original researchers
 (these are included in the submission).
 
-The data set is located in the *averages.txt* file which contains
-`r nrow(averages)` rows of `r ncol(averages)` columns. the columns correspond
-to variables while the rows are observations. The data in the table are the averages
-of the oroginal retained variables by the activity type and subject.
+The data set is located in the *averages.txt* file which contains 
+**`r nrow(averages)`** rows of **`r ncol(averages)`** columns.
+Note: **`r nrow(averages)`** = **`r nSubjects`** activities X **`r nActivities`** subjects.
 
-The first 12 rows and first five columns look like this:
+The columns correspond to variables while the rows are observations. The data in the table are the averages of the original retained variables by the activity type and subject.
+
+The first 12 rows and first 5 columns look like this:
 
 ```{r,echo=FALSE,results='asis'}
 knitr::kable(averages[1:12,1:5])
@@ -35,14 +38,36 @@ The first two columns are
 
 Column | Variable | Description
 ------ | -------- | ----------------
-1      | Activity | The desciptive name of the activity being performed.
-2      | Subject  | THe number of the subject performing the activity.
+1      | Activity | The descriptive name of the activity being performed.
+2      | Subject  | The number of the subject performing the activity.
 
 The subsequent columns are
 
 ```{r,echo=FALSE,results='asis'}
 cols<-3:ncol(averages)
-knitr::kable(data.frame(Column=cols,Variable=colnames(averages)[cols]),align=c('l','l'))
+cn<-colnames(averages)[cols]
+cn.ms.XYZ  <- unique(sub('\\.(mean|std)$','',sub('\\.[XYZ]$','',cn)))
+cn.ms      <- unique(sub('\\.(mean|std)$','',grep('\\.[XYZ]$',cn,invert=T,value=T)))
+lcn.ms.XYZ <- length(cn.ms.XYZ)
+lcn.ms     <- length(cn.ms)
+knitr::kable(data.frame(Column=cols,Variable=cn),align=c('l','l'))
+```
+
+The above table is an exhaustive list of all columns. The following two tables
+give a more compact list of the **`r length(cn.ms.XYZ)+length(cn.ms)`** variables for
+which data is given in the file.
+
+The following `r lcn.ms.XYZ` variables have 6 variants
+(...*stat*.*coord*, *stat*=mean | std, *coord* = X | Y | Z):
+
+```{r,echo=FALSE,results='asis'}
+knitr::kable(data.frame(N=1:lcn.ms.XYZ,Variable=cn.ms.XYZ),align=c('l','l'))
+```
+
+The following `r lcn.ms` variables have 2 variants (...*stat*, *stat*=mean | std):
+
+```{r,echo=FALSE,results='asis'}
+knitr::kable(data.frame(N=(1:lcn.ms)+lcn.ms.XYZ,Variable=cn.ms),align=c('l','l'))
 ```
 
 
